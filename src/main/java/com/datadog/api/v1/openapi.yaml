@@ -21628,12 +21628,12 @@ components:
           configVariables:
           - name: VARIABLE_NAME
             pattern: pattern
-            id: id
+            id: 123abcd4-5678-44ab-c234-d56e9999ff22
             type: text
             example: example
           - name: VARIABLE_NAME
             pattern: pattern
-            id: id
+            id: 123abcd4-5678-44ab-c234-d56e9999ff22
             type: text
             example: example
         public_id: public_id
@@ -21792,12 +21792,12 @@ components:
         configVariables:
         - name: VARIABLE_NAME
           pattern: pattern
-          id: id
+          id: 123abcd4-5678-44ab-c234-d56e9999ff22
           type: text
           example: example
         - name: VARIABLE_NAME
           pattern: pattern
-          id: id
+          id: 123abcd4-5678-44ab-c234-d56e9999ff22
           type: text
           example: example
       properties:
@@ -22005,12 +22005,12 @@ components:
             configVariables:
             - name: VARIABLE_NAME
               pattern: pattern
-              id: id
+              id: 123abcd4-5678-44ab-c234-d56e9999ff22
               type: text
               example: example
             - name: VARIABLE_NAME
               pattern: pattern
-              id: id
+              id: 123abcd4-5678-44ab-c234-d56e9999ff22
               type: text
               example: example
         check_time: 0.8008281904610115
@@ -22325,12 +22325,12 @@ components:
           configVariables:
           - name: VARIABLE_NAME
             pattern: pattern
-            id: id
+            id: 123abcd4-5678-44ab-c234-d56e9999ff22
             type: text
             example: example
           - name: VARIABLE_NAME
             pattern: pattern
-            id: id
+            id: 123abcd4-5678-44ab-c234-d56e9999ff22
             type: text
             example: example
         steps:
@@ -22442,12 +22442,12 @@ components:
         configVariables:
         - name: VARIABLE_NAME
           pattern: pattern
-          id: id
+          id: 123abcd4-5678-44ab-c234-d56e9999ff22
           type: text
           example: example
         - name: VARIABLE_NAME
           pattern: pattern
-          id: id
+          id: 123abcd4-5678-44ab-c234-d56e9999ff22
           type: text
           example: example
       properties:
@@ -22747,12 +22747,12 @@ components:
             configVariables:
             - name: VARIABLE_NAME
               pattern: pattern
-              id: id
+              id: 123abcd4-5678-44ab-c234-d56e9999ff22
               type: text
               example: example
             - name: VARIABLE_NAME
               pattern: pattern
-              id: id
+              id: 123abcd4-5678-44ab-c234-d56e9999ff22
               type: text
               example: example
         check_time: 0.8008281904610115
@@ -23067,7 +23067,7 @@ components:
       example:
         name: VARIABLE_NAME
         pattern: pattern
-        id: id
+        id: 123abcd4-5678-44ab-c234-d56e9999ff22
         type: text
         example: example
       properties:
@@ -23076,6 +23076,7 @@ components:
           type: string
         id:
           description: ID of the variable for global variables.
+          example: 123abcd4-5678-44ab-c234-d56e9999ff22
           type: string
         name:
           description: Name of the variable.
@@ -23087,6 +23088,7 @@ components:
         type:
           $ref: '#/components/schemas/SyntheticsConfigVariableType'
       required:
+      - id
       - name
       - type
       type: object
@@ -23589,12 +23591,12 @@ components:
             configVariables:
             - name: VARIABLE_NAME
               pattern: pattern
-              id: id
+              id: 123abcd4-5678-44ab-c234-d56e9999ff22
               type: text
               example: example
             - name: VARIABLE_NAME
               pattern: pattern
-              id: id
+              id: 123abcd4-5678-44ab-c234-d56e9999ff22
               type: text
               example: example
         - creator:
@@ -23686,12 +23688,12 @@ components:
             configVariables:
             - name: VARIABLE_NAME
               pattern: pattern
-              id: id
+              id: 123abcd4-5678-44ab-c234-d56e9999ff22
               type: text
               example: example
             - name: VARIABLE_NAME
               pattern: pattern
-              id: id
+              id: 123abcd4-5678-44ab-c234-d56e9999ff22
               type: text
               example: example
       properties:
@@ -24154,12 +24156,12 @@ components:
         configVariables:
         - name: VARIABLE_NAME
           pattern: pattern
-          id: id
+          id: 123abcd4-5678-44ab-c234-d56e9999ff22
           type: text
           example: example
         - name: VARIABLE_NAME
           pattern: pattern
-          id: id
+          id: 123abcd4-5678-44ab-c234-d56e9999ff22
           type: text
           example: example
       properties:
@@ -24275,12 +24277,12 @@ components:
           configVariables:
           - name: VARIABLE_NAME
             pattern: pattern
-            id: id
+            id: 123abcd4-5678-44ab-c234-d56e9999ff22
             type: text
             example: example
           - name: VARIABLE_NAME
             pattern: pattern
-            id: id
+            id: 123abcd4-5678-44ab-c234-d56e9999ff22
             type: text
             example: example
       properties:
@@ -31723,12 +31725,12 @@ components:
           configVariables:
           - name: VARIABLE_NAME
             pattern: pattern
-            id: id
+            id: 123abcd4-5678-44ab-c234-d56e9999ff22
             type: text
             example: example
           - name: VARIABLE_NAME
             pattern: pattern
-            id: id
+            id: 123abcd4-5678-44ab-c234-d56e9999ff22
             type: text
             example: example
       properties:
@@ -31818,12 +31820,12 @@ components:
           configVariables:
           - name: VARIABLE_NAME
             pattern: pattern
-            id: id
+            id: 123abcd4-5678-44ab-c234-d56e9999ff22
             type: text
             example: example
           - name: VARIABLE_NAME
             pattern: pattern
-            id: id
+            id: 123abcd4-5678-44ab-c234-d56e9999ff22
             type: text
             example: example
       properties:
