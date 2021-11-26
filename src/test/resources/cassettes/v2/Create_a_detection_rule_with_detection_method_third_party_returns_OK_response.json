@@ -1,0 +1,155 @@
+[
+  {
+    "httpRequest": {
+      "body": {
+        "type": "JSON",
+        "json": "{\"cases\":[{\"name\":\"\",\"notifications\":[],\"status\":\"info\"}],\"filters\":[],\"isEnabled\":true,\"message\":\"Test-Create_a_detection_rule_with_detection_method_third_party_returns_OK_response-1637774113 message\",\"name\":\"Test-Create_a_detection_rule_with_detection_method_third_party_returns_OK_response-1637774113\",\"options\":{\"detectionMethod\":\"third_party\",\"evaluationWindow\":0,\"keepAlive\":3600,\"maxSignalDuration\":86400,\"thirdPartyRuleOptions\":{\"defaultStatus\":\"low\",\"rootQuery\":\"@pop\"}},\"queries\":[{\"aggregation\":\"none\",\"distinctFields\":[],\"groupByFields\":[],\"query\":\"@test:true\"}],\"tags\":[]}"
+      },
+      "headers": {
+        "JAVA-TEST-NAME": [
+          "Create_a_detection_rule_with_detection_method_third_party_returns_OK_response"
+        ]
+      },
+      "method": "POST",
+      "path": "/api/v2/security_monitoring/rules",
+      "keepAlive": false,
+      "secure": true
+    },
+    "httpResponse": {
+      "body": "{\"creationAuthorId\":1445416,\"tags\":[],\"isEnabled\":true,\"hasExtendedTitle\":false,\"message\":\"Test-Create_a_detection_rule_with_detection_method_third_party_returns_OK_response-1637774113 message\",\"options\":{\"detectionMethod\":\"third_party\",\"evaluationWindow\":0,\"maxSignalDuration\":86400,\"thirdPartyRuleOptions\":{\"defaultStatus\":\"low\",\"defaultNotifications\":[],\"rootQuery\":\"@pop\"},\"keepAlive\":3600},\"version\":1,\"createdAt\":1637774113764,\"filters\":[],\"queries\":[{\"query\":\"@test:true\",\"groupByFields\":[],\"aggregation\":\"none\",\"name\":\"\",\"distinctFields\":[]}],\"isDeleted\":false,\"cases\":[{\"status\":\"info\",\"notifications\":[],\"name\":\"\"}],\"type\":\"log_detection\",\"id\":\"va8-eze-ku8\",\"isDefault\":false,\"name\":\"Test-Create_a_detection_rule_with_detection_method_third_party_returns_OK_response-1637774113\"}",
+      "headers": {
+        "Date": [
+          "Wed, 24 Nov 2021 17:15:13 GMT"
+        ],
+        "Content-Type": [
+          "application/json;charset=utf-8"
+        ],
+        "Content-Length": [
+          "789"
+        ],
+        "Connection": [
+          "close"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "X-Ratelimit-Remaining": [
+          "599"
+        ],
+        "X-Ratelimit-Limit": [
+          "600"
+        ],
+        "X-Ratelimit-Period": [
+          "60"
+        ],
+        "X-Ratelimit-Reset": [
+          "47"
+        ],
+        "Content-Disposition": [
+          "inline"
+        ],
+        "X-Envoy-Upstream-Service-Time": [
+          "82"
+        ],
+        "Vary": [
+          "Accept-Encoding"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=15724800;"
+        ],
+        "Content-Security-Policy": [
+          "frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report"
+        ],
+        "X-Frame-Options": [
+          "SAMEORIGIN"
+        ]
+      },
+      "statusCode": 200,
+      "reasonPhrase": "OK"
+    },
+    "times": {
+      "remainingTimes": 1
+    },
+    "timeToLive": {
+      "unlimited": true
+    },
+    "id": "2de5e74d-e27a-1b17-a66f-b241cf6473af"
+  },
+  {
+    "httpRequest": {
+      "headers": {
+        "JAVA-TEST-NAME": [
+          "Create_a_detection_rule_with_detection_method_third_party_returns_OK_response"
+        ]
+      },
+      "method": "DELETE",
+      "path": "/api/v2/security_monitoring/rules/va8-eze-ku8",
+      "keepAlive": false,
+      "secure": true
+    },
+    "httpResponse": {
+      "headers": {
+        "Date": [
+          "Wed, 24 Nov 2021 17:15:13 GMT"
+        ],
+        "Connection": [
+          "close"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "X-Ratelimit-Remaining": [
+          "598"
+        ],
+        "X-Ratelimit-Limit": [
+          "600"
+        ],
+        "X-Ratelimit-Period": [
+          "60"
+        ],
+        "X-Ratelimit-Reset": [
+          "47"
+        ],
+        "Content-Disposition": [
+          "inline"
+        ],
+        "X-Envoy-Upstream-Service-Time": [
+          "83"
+        ],
+        "Vary": [
+          "Accept-Encoding"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=15724800;"
+        ],
+        "Content-Security-Policy": [
+          "frame-ancestors 'self'; report-uri https://api.datadoghq.com/csp-report"
+        ],
+        "X-Frame-Options": [
+          "SAMEORIGIN"
+        ]
+      },
+      "statusCode": 204,
+      "reasonPhrase": "No Content"
+    },
+    "times": {
+      "remainingTimes": 1
+    },
+    "timeToLive": {
+      "unlimited": true
+    },
+    "id": "78160a95-ba66-e10a-7c60-e845619e1024"
+  }
+]

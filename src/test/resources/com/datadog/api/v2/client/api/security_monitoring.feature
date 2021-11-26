@@ -19,6 +19,12 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  Scenario: Create a detection rule with detection method "third_party" returns "OK" response
+    Given new "CreateSecurityMonitoringRule" request
+    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"none","groupByFields":[],"distinctFields":[]}],"filters":[],"cases":[{"name":"","status":"info","notifications":[]}],"options":{"detectionMethod":"third_party","evaluationWindow": 0, "keepAlive":3600,"maxSignalDuration":86400, "thirdPartyRuleOptions":{"rootQuery":"@pop","defaultStatus":"low"}},"message":"{{ unique}} message","tags":[],"isEnabled":true}
+    When the request is sent
+    Then the response status is 200 OK
+
   Scenario: Create a detection rule with type 'workload_security' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":"", "agentRule":{"agentRuleId": "kernel_module_unlink_2", "expression": "(open.flags & ((O_CREAT|O_RDWR|O_WRONLY|O_TRUNC)) > 0)"}}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type": "workload_security"}
@@ -198,7 +204,7 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "<PATH>"
-    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
+    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}, "thirdPartyRuleOptions": {"defaultNotifications": [null], "defaultStatus": "critical", "firstSeenOverride": null, "lastSeenOverride": null, "rootQuery": null, "signalId": null}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -206,7 +212,7 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "<PATH>"
-    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
+    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}, "thirdPartyRuleOptions": {"defaultNotifications": [null], "defaultStatus": "critical", "firstSeenOverride": null, "lastSeenOverride": null, "rootQuery": null, "signalId": null}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -214,6 +220,6 @@ Feature: Security Monitoring
   Scenario: Update an existing rule returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "<PATH>"
-    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
+    And body with value {"cases": [{"condition": null, "name": null, "notifications": [null], "status": "critical"}], "filters": [{"action": "require", "query": null}], "hasExtendedTitle": true, "isEnabled": null, "message": null, "name": null, "options": {"detectionMethod": "threshold", "evaluationWindow": 0, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0}, "thirdPartyRuleOptions": {"defaultNotifications": [null], "defaultStatus": "critical", "firstSeenOverride": null, "lastSeenOverride": null, "rootQuery": null, "signalId": null}}, "queries": [{"agentRule": {"agentRuleId": "etc_shadow", "expression": null}, "aggregation": "count", "distinctFields": [null], "groupByFields": [null], "metric": null, "name": null, "query": null}], "tags": [null], "version": 1}
     When the request is sent
     Then the response status is 200 OK
