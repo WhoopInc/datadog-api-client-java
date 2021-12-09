@@ -29,7 +29,13 @@ public class Example {
                     .type(ApplicationKeysType.APPLICATION_KEYS)
                     .attributes(
                         new ApplicationKeyUpdateAttributes()
-                            .name("Application Key for submitting metrics-updated")));
+                            .name("Application Key for managing dashboards-updated")
+                            .scopes(
+                                new ArrayList<String>() {
+                                  {
+                                    ;
+                                  }
+                                })));
 
     try {
       ApplicationKeyResponse result =
