@@ -70,7 +70,7 @@ jobs:
       - store_test_results:
           path: ~/junit
       - store_artifacts:
-          path: datadog-api-client/target/datadog-api-client-1.2.0-WHOOP-SNAPSHOT.jar
+          path: target/datadog-api-client-1.2.0-WHOOP-SNAPSHOT.jar
 
 workflows:
   version: 2
