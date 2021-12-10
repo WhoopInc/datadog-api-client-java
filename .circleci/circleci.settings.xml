@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+    <servers>
+        <server>
+            <id>sonatype-snapshots</id>
+            <username>${NEXUS_RM_USERNAME}</username>
+            <password>${NEXUS_RM_PASSWORD}</password>
+        </server>
+    </servers>
+    <profiles>
+        <profile>
+            <id>sonatype-snapshots</id>
+            <repositories>
+                <repository>
+                    <id>sonatype-snapshots</id>
+                    <url>https://nexus.qa.whoop.com/repository/maven-snapshots/</url>
+                    <layout>default</layout>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                </repository>
+            </repositories>
+        </profile>
+        <profile>
+            <id>sonatype-releases</id>
+            <repositories>
+                <repository>
+                    <id>sonatype-releases</id>
+                    <url>https://nexus.qa.whoop.com/repository/maven-releases/</url>
+                    <layout>default</layout>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>sonatype-snapshots</activeProfile>
+    </activeProfiles>
+</settings>
