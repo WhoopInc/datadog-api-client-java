@@ -37,6 +37,19 @@
         </developer>
     </developers>
 
+    <distributionManagement>
+        <repository>
+            <id>sonatype-snapshots</id>
+            <url>https://nexus.qa.whoop.com/repository/maven-snapshots/</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <id>sonatype-snapshots</id>
+            <url>https://nexus.qa.whoop.com/repository/maven-snapshots/</url>
+            <layout>default</layout>
+        </snapshotRepository>
+    </distributionManagement>
+
 <!--    <profiles>-->
 <!--        <profile>-->
 <!--            <id>surefire-java16</id>-->
