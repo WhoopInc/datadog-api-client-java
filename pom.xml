@@ -50,93 +50,6 @@
         </snapshotRepository>
     </distributionManagement>
 
-<!--    <profiles>-->
-<!--        <profile>-->
-<!--            <id>surefire-java16</id>-->
-<!--            <activation>-->
-<!--                <property>-->
-<!--                    <name>java.version</name>-->
-<!--                    <value>16.0.1</value>-->
-<!--                </property>-->
-<!--            </activation>-->
-<!--            <build>-->
-<!--                <plugins>-->
-<!--                    <plugin>-->
-<!--                        <groupId>org.apache.maven.plugins</groupId>-->
-<!--                        <artifactId>maven-surefire-plugin</artifactId>-->
-<!--                        <version>3.0.0-M5</version>-->
-<!--                        <configuration>-->
-<!--                            <runOrder>random</runOrder>-->
-<!--                            <argLine>-DloggerPath=conf/log4j.properties -Ddd.integration.junit.enabled=true -Ddd.prioritization.type=ENSURE_TRACE -Ddd.jmxfetch.enabled=false -javaagent:${basedir}/target/dd-java-agent-${dd-java-agent-version}.jar ${argLine} -Xms512m -Xmx3500m -DsurefireForkNumber=${surefire.forkNumber} &#45;&#45;add-exports java.base/sun.security.x509=ALL-UNNAMED &#45;&#45;add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED &#45;&#45;add-opens java.base/java.net=ALL-UNNAMED</argLine>-->
-<!--                        </configuration>-->
-<!--                    </plugin>-->
-<!--                </plugins>-->
-<!--            </build>-->
-<!--        </profile>-->
-<!--        &lt;!&ndash; Performing a release deployment requires setting of performRelease property &ndash;&gt;-->
-<!--        <profile>-->
-<!--            <id>deploy-artifacts</id>-->
-<!--            <activation>-->
-<!--                <activeByDefault>true</activeByDefault>-->
-<!--                <property>-->
-<!--                    <name>performRelease</name>-->
-<!--                    <value>true</value>-->
-<!--                </property>-->
-<!--            </activation>-->
-
-<!--            <distributionManagement>-->
-<!--                <repository>-->
-<!--                    <id>sonatype-snapshots</id>-->
-<!--                    <url>https://nexus.qa.whoop.com/repository/maven-snapshots/</url>-->
-<!--                    <layout>default</layout>-->
-<!--                </repository>-->
-<!--                <snapshotRepository>-->
-<!--                    <id>sonatype-snapshots</id>-->
-<!--                    <url>https://nexus.qa.whoop.com/repository/maven-snapshots/</url>-->
-<!--                    <layout>default</layout>-->
-<!--                </snapshotRepository>-->
-<!--            </distributionManagement>-->
-
-<!--            <build>-->
-<!--                <plugins>-->
-<!--                    <plugin>-->
-<!--                        <groupId>org.sonatype.plugins</groupId>-->
-<!--                        <artifactId>nexus-staging-maven-plugin</artifactId>-->
-<!--                        <version>1.6.8</version>-->
-<!--                        <extensions>true</extensions>-->
-<!--                        <configuration>-->
-<!--                            <serverId>nexus</serverId>-->
-<!--                            &lt;!&ndash; Use the localhost endpoint for testing &ndash;&gt;-->
-<!--                            &lt;!&ndash; <nexusUrl>http://localhost:8081/repository/maven-releases/</nexusUrl> &ndash;&gt;-->
-<!--                            <nexusUrl>https://nexus.qa.whoop.com/</nexusUrl>-->
-<!--                            <autoReleaseAfterClose>false</autoReleaseAfterClose>-->
-<!--                        </configuration>-->
-<!--                    </plugin>-->
-<!--                    <plugin>-->
-<!--                        <groupId>org.apache.maven.plugins</groupId>-->
-<!--                        <artifactId>maven-gpg-plugin</artifactId>-->
-<!--                        <version>3.0.1</version>-->
-<!--                        <executions>-->
-<!--                            <execution>-->
-<!--                                <id>sign-artifacts</id>-->
-<!--                                <phase>verify</phase>-->
-<!--                                <goals>-->
-<!--                                    <goal>sign</goal>-->
-<!--                                </goals>-->
-<!--                                <configuration>-->
-<!--                                    <gpgArguments>-->
-<!--                                        <arg>&#45;&#45;pinentry-mode</arg>-->
-<!--                                        <arg>loopback</arg>-->
-<!--                                    </gpgArguments>-->
-<!--                                </configuration>-->
-<!--                            </execution>-->
-<!--                        </executions>-->
-<!--                    </plugin>-->
-<!--                </plugins>-->
-<!--            </build>-->
-<!--        </profile>-->
-<!--    </profiles>-->
-
     <build>
         <resources>
             <resource>
@@ -194,7 +107,7 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <runOrder>random</runOrder>
-                    <argLine>-DloggerPath=conf/log4j.properties -Ddd.integration.junit.enabled=true -Ddd.prioritization.type=ENSURE_TRACE -Ddd.jmxfetch.enabled=false -javaagent:${basedir}/target/dd-java-agent-${dd-java-agent-version}.jar ${argLine} -Xms512m -Xmx3500m -DsurefireForkNumber=${surefire.forkNumber}</argLine>
+                    <argLine>-Ddd.integration.junit.enabled=true -Ddd.prioritization.type=ENSURE_TRACE -Ddd.jmxfetch.enabled=false -javaagent:${basedir}/target/dd-java-agent-${dd-java-agent-version}.jar ${argLine} -Xms512m -Xmx3500m -DsurefireForkNumber=${surefire.forkNumber}</argLine>
                 </configuration>
             </plugin>
             <plugin>
