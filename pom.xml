@@ -80,6 +80,7 @@
                 <snapshotRepository>
                     <id>sonatype-snapshots</id>
                     <url>https://nexus.qa.whoop.com/repository/maven-snapshots/</url>
+                    <layout>default</layout>
                 </snapshotRepository>
             </distributionManagement>
 
