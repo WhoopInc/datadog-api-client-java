@@ -72,18 +72,15 @@
             </activation>
 
             <distributionManagement>
-                <snapshotRepository>
-                    <id>nexus</id>
-                    <!-- Use the localhost endpoint for testing -->
-                    <!-- <url>http://localhost:8081/repository/maven-snapshots/</url> -->
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
                 <repository>
-                    <id>nexus</id>
-                    <!-- Use the localhost endpoint for testing -->
-                    <!-- <url>http://localhost:8081/repository/maven-releases/</url> -->
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                    <id>sonatype-snapshots</id>
+                    <url>https://nexus.qa.whoop.com/repository/maven-snapshots/</url>
+                    <layout>default</layout>
                 </repository>
+                <snapshotRepository>
+                    <id>sonatype-snapshots</id>
+                    <url>https://nexus.qa.whoop.com/repository/maven-snapshots/</url>
+                </snapshotRepository>
             </distributionManagement>
 
             <build>
