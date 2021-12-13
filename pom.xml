@@ -39,9 +39,32 @@
 
     <profiles>
         <profile>
+            <id>surefire-java16</id>
+            <activation>
+                <property>
+                    <name>java.version</name>
+                    <value>16.0.1</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M5</version>
+                        <configuration>
+                            <runOrder>random</runOrder>
+                            <argLine>-DloggerPath=conf/log4j.properties -Ddd.integration.junit.enabled=true -Ddd.prioritization.type=ENSURE_TRACE -Ddd.jmxfetch.enabled=false -javaagent:${basedir}/target/dd-java-agent-${dd-java-agent-version}.jar ${argLine} -Xms512m -Xmx3500m -DsurefireForkNumber=${surefire.forkNumber} --add-exports java.base/sun.security.x509=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED</argLine>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!-- Performing a release deployment requires setting of performRelease property -->
+        <profile>
             <id>deploy-artifacts</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
                 <property>
                     <name>performRelease</name>
                     <value>true</value>
@@ -49,15 +72,18 @@
             </activation>
 
             <distributionManagement>
-                <repository>
-                    <id>sonatype-snapshots</id>
-                    <url>https://nexus.qa.whoop.com/repository/maven-snapshots/</url>
-                    <layout>default</layout>
-                </repository>
                 <snapshotRepository>
-                    <id>sonatype-snapshots</id>
-                    <url>https://nexus.qa.whoop.com/repository/maven-snapshots/</url>
+                    <id>nexus</id>
+                    <!-- Use the localhost endpoint for testing -->
+                    <!-- <url>http://localhost:8081/repository/maven-snapshots/</url> -->
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
                 </snapshotRepository>
+                <repository>
+                    <id>nexus</id>
+                    <!-- Use the localhost endpoint for testing -->
+                    <!-- <url>http://localhost:8081/repository/maven-releases/</url> -->
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
             </distributionManagement>
 
             <build>
@@ -69,7 +95,9 @@
                         <extensions>true</extensions>
                         <configuration>
                             <serverId>nexus</serverId>
-                            <nexusUrl>https://nexus.qa.whoop.com/repository/maven-snapshots/</nexusUrl>
+                            <!-- Use the localhost endpoint for testing -->
+                            <!-- <nexusUrl>http://localhost:8081/repository/maven-releases/</nexusUrl> -->
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>false</autoReleaseAfterClose>
                         </configuration>
                     </plugin>
@@ -134,32 +162,14 @@
                     <tagNameFormat>@{project.version}</tagNameFormat>
                 </configuration>
             </plugin>
-            <plugin>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            <!-- Skip the maven release default deploy, we use the nexus staging plugin for this-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>3.0.0-M1</version>
-                <executions>
-                    <execution>
-                        <id>deploy</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
