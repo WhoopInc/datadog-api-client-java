@@ -64,7 +64,7 @@
         <profile>
             <id>deploy-artifacts</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
                 <property>
                     <name>performRelease</name>
                     <value>true</value>
