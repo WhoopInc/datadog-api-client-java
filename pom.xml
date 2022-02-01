@@ -289,6 +289,9 @@
                                 <relocation>
                                     <pattern>javax</pattern>
                                     <shadedPattern>com.whoop.shaded.javax</shadedPattern>
+                                    <excludes>
+                                        <exclude>javax.net.ssl.*</exclude>
+                                    </excludes>
                                 </relocation>
                                 <relocation>
                                     <pattern>javassist</pattern>
