@@ -276,19 +276,19 @@
                             <relocations>
                                 <relocation>
                                     <pattern>com.fasterxml.jackson</pattern>
-                                    <shadedPattern>com.whoop.com.shaded.fasterxml.jackson</shadedPattern>
+                                    <shadedPattern>com.whoop.shaded.com.fasterxml.jackson</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>com.github.scribejava.core</pattern>
-                                    <shadedPattern>com.whoop.com.shaded.github.scribejava.core</shadedPattern>
+                                    <shadedPattern>com.whoop.shaded.com.github.scribejava.core</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>io.swagger.annotations</pattern>
-                                    <shadedPattern>com.whoop.io.shaded.swagger.annotations</shadedPattern>
+                                    <shadedPattern>com.whoop.shaded.io.swagger.annotations</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>javax</pattern>
-                                    <shadedPattern>com.whoop.javax.shaded</shadedPattern>
+                                    <shadedPattern>com.whoop.shaded.javax</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>javassist</pattern>
@@ -296,27 +296,27 @@
                                 </relocation>
                                 <relocation>
                                     <pattern>org.aopalliance</pattern>
-                                    <shadedPattern>com.whoop.org.shaded.aopalliance</shadedPattern>
+                                    <shadedPattern>com.whoop.shaded.org.aopalliance</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>org.apache</pattern>
-                                    <shadedPattern>com.whoop.org.shaded.apache</shadedPattern>
+                                    <shadedPattern>com.whoop.shaded.org.apache</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>org.jvnet</pattern>
-                                    <shadedPattern>com.whoop.org.shaded.jvnet</shadedPattern>
+                                    <shadedPattern>com.whoop.shaded.org.jvnet</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>org.glassfish</pattern>
-                                    <shadedPattern>com.whoop.org.shaded.glassfish</shadedPattern>
+                                    <shadedPattern>com.whoop.shaded.org.glassfish</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>org.openapitools.jackson.nullable</pattern>
-                                    <shadedPattern>com.whoop.org.shaded.openapitools.jackson.nullable</shadedPattern>
+                                    <shadedPattern>com.whoop.shaded.org.openapitools.jackson.nullable</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>org.tomitribe.auth.signatures</pattern>
-                                    <shadedPattern>com.whoop.org.shaded.tomitribe.auth.signatures</shadedPattern>
+                                    <shadedPattern>com.whoop.shaded.org.tomitribe.auth.signatures</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>
