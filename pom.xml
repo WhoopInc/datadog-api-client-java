@@ -278,6 +278,46 @@
                                     <pattern>com.fasterxml.jackson</pattern>
                                     <shadedPattern>com.shaded.fasterxml.jackson</shadedPattern>
                                 </relocation>
+                                <relocation>
+                                    <pattern>com.github.scribejava.core</pattern>
+                                    <shadedPattern>com.shaded.github.scribejava.core</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>io.swagger.annotations</pattern>
+                                    <shadedPattern>io.shaded.swagger.annotations</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>javax</pattern>
+                                    <shadedPattern>javax.shaded</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>javassist</pattern>
+                                    <shadedPattern>shaded.javassist</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.aopalliance</pattern>
+                                    <shadedPattern>org.shaded.aopalliance</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.apache</pattern>
+                                    <shadedPattern>org.shaded.apache</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.jvnet</pattern>
+                                    <shadedPattern>org.shaded.jvnet</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.glassfish</pattern>
+                                    <shadedPattern>org.shaded.glassfish</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.openapitools.jackson.nullable</pattern>
+                                    <shadedPattern>org.shaded.openapitools.jackson.nullable</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.tomitribe.auth.signatures</pattern>
+                                    <shadedPattern>org.shaded.tomitribe.auth.signatures</shadedPattern>
+                                </relocation>
                             </relocations>
                         </configuration>
                     </execution>
